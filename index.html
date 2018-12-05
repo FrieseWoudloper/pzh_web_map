@@ -1,0 +1,532 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>PZH Maps on the Web</title>
+    <link rel="stylesheet" href="presentation/css/reveal.css">
+    <link rel="stylesheet" href="presentation/css/theme/datavizfest.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="presentation/lib/css/zenburn.css">
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'presentation/css/print/pdf.css' : 'presentation/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <!-- WELKOM EN LINKS -->
+            <section data-background="img/Screenshot_background2.png">
+                <section>
+                    <h1>Maps on the Web!</h1>
+                    <h2 style="margin: 0 0 40px 0;"></h2>
+                    <h3>Presentatie en workshop voor Provincie Zuid-Holland</h3>
+                    <h3 style="margin: 0 0 0 0;">Door: Niene Boeijen</h3>
+                </section>
+                <section>
+                    <h1>Deze presentatie en workshop materialen:</h1>
+                    <h2 style="text-transform: initial;"><a href="https://github.com/NieneB/pzh_web_map">www.github.com/NieneB/pzh_web_map</a></h2>
+                </section>
+            </section>
+            <!-- ABOUT ME ME ME! -->
+            <section>
+                <section>
+                    <h1>Wie ben ik?</h1>
+                    <div style="float:right; width:50%;">
+                        <a href="http://webmapper.net"><img src="img/webmapper_logo_tekst.png" height="100px"> </a>
+                        <br />
+                        <a href="http://maptime.io"><img src="img/maptimeAMS.png" height="130px"></a>
+                        <br />
+                        <a href="https://waag.org/en/users/niene-boeijen"><img src="img/WS_logo.jpg" height="100px"></a>
+                        <br />
+                        <br />
+                        <img src="img/wur.jpg" height="50px">
+                    </div>
+                    <div style="float:left; width: 50%;">
+                        <p>Web Cartographer & Geo ICT developer</p>
+                        <br />
+                        <p> Event Organizer: Maptime <a href="https://www.meetup.com/Maptime-AMS">Amsterdam</a> & <a href="https://www.meetup.com/Maptime030-Utrecht/">Utrecht</a></p>
+                        <br />
+                        <p>Internship Geo Web Visualization<a href="http://nieneb.github.io/verstedelijking/">[1]</a>
+                            <br />
+                            <a href="http://nieneb.github.io/TopoNamen/">[2] </a> <a href="http://nieneb.github.io/InternshipReport/">[3]</a></p>
+                        <br />
+                        <p>Msc Geo Information Science & Remote Sensing <a href="http://nieneb.github.io/ThesisPresentation/#/">[1]</a></p>
+                    </div>
+                </section>
+            </section>
+            <!-- DOEL EN INHOUD -->
+            <section>
+                <section>
+                    <h1>Goal of today!</h1>
+                    <p> At the end of this workshop, you will have <b>your own web page with an interactive map!</b> Including
+                        custom data and different background maps, of the area you want to show! Your web page will be hosted on
+                        Github, so you can <b>immediately share your progress with all your family and friends!</b></p>
+                    <img src="https://media.giphy.com/media/6KKab1ydLq1uU/giphy.gif">
+                </section>
+                <section>
+                    <h1> Beginners</h1>
+                    <img src="https://media.giphy.com/media/AEcZfXZZNCcQU/giphy.gif" width="250px">
+                    <p>For beginners means: if you have NO knowledge of JavaScript, HTML, CSS, Leaflet.js and D3.js, this workshop
+                        will help you get started!</p>
+                </section>
+                <section>
+                    <h1>This is how we do it:</h1>
+                    <table>
+                        <tr>
+                            <td>Introduction</td>
+                            <td>15 min </td>
+                        </tr>
+                        <tr>
+                            <td>Leaflet.js</td>
+                            <td>15 min </td>
+                        </tr>
+                        <tr>
+                            <td> <a href="https://github.com/NieneB/Webmapping_for_beginners/wiki/Introduction-Leaflet">Workshop
+                                    Leaflet.js </a></td>
+                            <td> 60 min</td>
+                        </tr>
+            
+                        <tr>
+                            <td colspan="2" align="center"> <b> Break! </b></td>
+                        </tr>
+                        <tr>
+                            <td> D3.js</td>
+                            <td>15 min</td>
+                        </tr>
+                        <tr>
+                            <td><a href="https://github.com/NieneB/Webmapping_for_beginners/wiki/Introduction-D3">Workshop D3.js</a></td>
+                            <td>60 min</td>
+                        </tr>
+            
+                        <tr>
+                            <td colspan="2" align="center"><b>Show & tell </b> </td>
+                        </tr>
+                    </table>
+                </section>
+                <section>
+                    <h1> Let's get started!</h1>
+                </section>
+            </section>
+
+
+            <!-- THE WEB MAP UNIVERSE -->
+            <section>
+                <section>
+                    <div style="background-color: rgba(255,255,255,0.8); padding:20px;">
+                        <h4>Technieken in </h4>
+                        <h1>Het Web Map Universum!</h1>
+                        <p>Data Design Code</p>
+                    </div>
+                    <aside class="notes">
+                        welke technologieën er precies zijn voor Web maps.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Even testen..</h1>
+                    <p class="fragment visible">Geo-data</p>
+                    <p class="fragment visible">Projecties</p>
+                    <p class="fragment visible">Desktop GIS(ArcGIS , Qgis)</p>
+                    <p class="fragment visible">HTML, CSS, JS</p>
+                    <p class="fragment visible">Web maps - Leaflet - raster tegels</p>
+                    <p class="fragment visible">GeoJSON format</p>
+                    <p class="fragment visible">Web Map Services (WMS / WFS)</p>
+                    <p class="fragment visible">Geo databases - Postgis</p>
+                    <p class="fragment visible">Vector tegels</p>
+                    <aside class="notes">
+                        Voordat we de technologie in duiken ga ik eerst even testen hoeveel jullie al weten?
+                    </aside>
+                </section>
+                <section>
+                    <h1>Van Data naar het Web</h1>
+                    <p>Doel >> Functionaliteit >> Mapping Technologie >> Design</p>
+                    <img src="img/desktop_web1.jpg"> <!-- desktop server data-->
+
+                    <a href="https://www.axismaps.com/blog/2012/09/advice-to-the-aspiring-interactive-cartographer/"></a>
+                    <aside class="notes">
+                        Data naar kaart is anders per doel, dataset, functionaliteit,HEEL generalisernd plaatjes is.
+                        from source to ready-to-map are different for every dataset,
+                        data vinden, bewerken/manipuleren, samenvoegen met andere data. > GIS
+                        Data opslaan (bestand /database )
+                        Hoe naar de kaart? serveren > opzetten + onderhoud
+                        Ontwerp kaart
+                        Ontwerp interface, interactie, experience.
+                    </aside>
+                </section>
+                <section>
+                    <h1>Data Code Design </h1>
+                    <ol>
+                        <li> Laad de data</li>
+                        <li> Maak dingen werkend</li>
+                        <li> Maak dingen mooi
+                    </ol>
+                    <p>
+                        <a href="https://www.axismaps.com/blog/2012/09/advice-to-the-aspiring-interactive-cartographer/">[source:
+                            Axis Maps]</a>
+                        </small>
+                    </p>
+                </section>
+                <section>
+                    <h1>Doel?</h1>
+                    <p>Veel manieren om geo-data op het web te krijgen!</p>
+                    <ul>
+                        <li>Interactieve/statische web map</li>
+                        <li>Web GIS applicatie </li>
+                        <li>WMS/WFS</li>
+                        <li>Download link</li>
+                        <li>Animated, real time</li>
+                        <li>Collaborative web maps</li>
+                        <li>Online atlasses</li>
+                        <li>Infographic, plaatje, video, gif</li>
+                    </ul>
+                    <aside class="notes">
+                        <p>GIS web map</p>
+                        <p> Animated, real time</p>
+                        <p>Collaborative web maps</p>
+                        <p>Online Atlasses</p>
+                        <p>Static web maps</p>
+                    </aside>
+                </section>
+                <section data-background="img/web_map_universe.png" data-background-size="80%">
+                    <aside class="notes">
+
+                        We hebben een schema opgezet waar je allerelei technieken ziet die je hier voor kan gebruiken. Dingen die
+                        je als Web cartograaf
+                        zou moeten kennen om alle moglijke geo data visualisaties te kunnen maken. en ja, met het meeste werken wij
+                        bij Webmapper
+                        ook!
+                    </aside>
+                    <!-- <img src="img/web_map_universe.png" /> -->
+                </section>
+
+                <section data-background="img/web_map_universe_data.png" data-background-size="80%">
+                </section>
+                <section data-background="img/web_map_universe_data_hosting.png" data-background-size="80%">
+                </section>
+                <section data-background="img/web_map_universe_data_hosting_design.png" data-background-size="80%">
+                </section>
+                <section data-background="img/web_map_universe_data_hosting_design_code.png" data-background-size="80%">
+                </section>
+                <section data-background="img/web_map_universe_data_hosting_design_code_all.png" data-background-size="80%">
+                    <aside class="notes"> Ben niet bang. Het belangrijkste is dat je alles een keer hoort. Mocht je het ooit tegen
+                        komen dan weet je nu sneller waar je moet zoeken.</aside>
+                </section>
+            </section>
+            <!--WEB MAP  -->
+            <section>
+                <section>
+                    <h1>What is a web map?</h1>
+                    <p><i>Analogue paper maps</i></p>
+                    <table>
+                        <tr>
+                            <th> Digital maps</th>
+                            <th> VS</th>
+                            <th>Web Maps</th>
+                        </tr>
+                        <tr>
+                            <td> Data </td>
+                            <td></td>
+                            <td> Tiles, styles and servers </td>
+                        </tr>
+                        <tr>
+                            <td> On the computer </td>
+                            <td></td>
+                            <td> View in a browser </td>
+                        </tr>
+                        <tr>
+                            <td>Calculate, analyze</td>
+                            <td></td>
+                            <td>scroll, pan, zoom</td>
+                        </tr>
+                    </table>
+                    <img src="img/webmapping_4_steps.jpg">
+                </section>
+                <section data-background="img/osm.png">
+                    <h2><a href="openstreetmap.org">openstreetmap.org</a></h2>
+                </section>
+                <section data-background="img/google.png">
+                    <h2><a href="google.com/maps">google.com/maps</a></h2>
+                </section>
+                <section>
+                    <h1>a little History</h1>
+                    <div style="float:left; width:50%">
+                        <p>Digital maps</p>
+                        <p>GIS software</p>
+                        <p>GIS on the Web is not user friendly.. </p>
+                        <p>1996 Mapquest first with a web service! </p>
+                    </div>
+                    <img src="img/mapquest.jpeg" style="float:right; width:50%">
+                </section>
+                <section>
+                    <h4>But really slow to load..</h4>
+                    <p>in 2004 Endoxon found a way for quick online mapping! <a href="http://map.search.ch">map.search.ch</a></p>
+                    <p>2005 Google Maps took over!</p>
+                    <p> The solution?</p>
+                    <h1 class="fragment grow">Tiles! </h1>
+                </section>
+                <section data-background="img/tiles-loading.gif">
+                    <h1>Tiles</h1>
+                    <p>All tiles size 256x256 pixels </p>
+                    <p>Placed in a grid, sharing boundaries </p>
+                    <p> Seamless map </p>
+                    <p class="fragment grow">All these little tiles load way faster than one big map!</p>
+                    <p>We call this slippy maps</p>
+                </section>
+                <section>
+                    <h1>Zoom levels</h1>
+                    <p>Each zoom level has its own set of tiles!</p>
+                    <div style="float:right; width:50%">
+                        <p>Zoom level 0: 1 tile for the whole world.</p>
+                        <p>Increases exponentially...</p>
+                        <p>Zoom level 1: 4 tiles</p>
+                        <p>Zoom level 2: 16 tiles</p>
+                        <p> etc. </p>
+                    </div>
+                    <img src="img/training-tiling.png" style="float:left; width:50%">
+                    <a href="http://www.maptiler.org/google-maps-coordinates-tile-bounds-projection/"> Map with tile bounds</a>
+                </section>
+                <section>
+                    <h1>Styling & Serving tiles</h1>
+                    <div style="float: left; width: 50%">
+                        <p>Tiles are styled and rendered in advance</p>
+                        <p>Tiles are just images on the web</p>
+                        <p><a href="http://tile.openstreetmap.org/5/16/10.png">http://tile.openstreetmap.org/5/16/10.png</a></p>
+                        <p>/z/x/y</p>
+                    </div>
+                    <div style="float: right; width: 50%">
+                        <img src="img/tiles.gif">
+                    </div>
+                </section>
+                <!-- 					<section>
+            						<h4>Today: </h4>
+            						<p> We use Tiles already provided on the internet!</p>
+            					</section> -->
+                <section>
+                    <h1>Layers!</h1>
+                    <div style="float: left; width: 50%;">
+                        <p>Base Layer</p>
+                        <p>Raster</p>
+                        <img src="img/raster.png" width="500px">
+                    </div>
+                    <div style="float: right; width: 50%;"">
+            							<p>Data Layer / Feature Layer</p>
+            							<p>Vector</p>
+            						<img src="
+                        img/vector_types.png" width="500px">
+                    </div>
+                </section>
+                <!-- 					<section>
+            						<p>There is also such a thing as Vector tiles!</p>
+            						<p>But today only about <h4>Raster tiles</h4></p>
+            					</section> -->
+                <section>
+                    <h1>Summary</h1>
+                    <h2>Web Map Building blocks</h2>
+                    <div style="float: left; width: 50%">
+                        <p>Data, styled, tiles, server:</p>
+                        <p><b>Base Layer</b></p>
+                        <p>Additional Data:</p>
+                        <p><b>Vector Layers</b></p>
+                        <p>Interface and Interaction</p>
+                        <p><i>Zoom, panning, clicking etc. </i></p>
+                    </div>
+                    <div style="float: left; width: 50%">
+                        <img src="img/tile_creation.png">
+                    </div>
+                </section>
+            </section>
+            <!-- WEB DEVELOPMENT -->
+            <section>
+                <section>
+                    <h2>How to bring this all together?</h2>
+                    <div class="fragment fade-in">
+                        <h1> JavaScript!</h1>
+                        <p>Puts it all together,</p>
+                        <p>Tiles, content, interaction</p>
+                    </div>
+                </section>
+                <section>
+                    <img src="img/web_map_building_blocks.png" height=" 50%">
+                </section>
+                <section>
+                    <h1>Making a Web Page</h1>
+                    <img src="img/html-css-js.png">
+                    <img class="fragment fade-in" src="img/html-css-js-file.png">
+                </section>
+                <section>
+                    <h1>New to HTML & CSS?</h1>
+                    <p>Start with <a href="https://github.com/NieneB/Webmapping_for_beginners/wiki/Making-a-web-page">Making a web
+                            page</a> </p>
+                    <p>Or use <a href="https://www.codecademy.com/learn/web"> Code Academy</a></p>
+                    <img src="img/html_demo.gif" width="50%">
+                </section>
+                <section>
+                    <h1>Maps with JavaScript</h1>
+                    <img src="img/web_map_building_blocks.png" height=" 50%">
+                </section>
+                <section>
+                    <h1>JavaScript Library</h1>
+                    <p> Including a JavaScript library in your code is like copying and pasting someone else's code into yours. You
+                        have access to everything in that library. </p>
+                    <p> In our case, it's a bunch of cool tools to make web maps and give them familiar functionality.</p>
+                </section>
+                <section>
+                    <h1>JavaScript Libraries for Mapping</h1>
+                    <p><a href="https://openlayers.org/">OpenLayers</a>
+                        <p class="fragment grow"><a href="http://leafletjs.com/">Leaflet.js</a></p>
+                        <p class="fragment grow"><a href="https://d3js.org/">D3.js</a></p>
+                        <p><a href="https://developers.google.com/maps/documentation/javascript/">Google Maps</a></p>
+                        <p><a href="https://www.mapbox.com/mapbox.js/api/v3.1.1/">Mapbox</a></p>
+                        <p><a href="https://developer.here.com/develop/javascript-api">HERE Maps</a></p>
+                </section>
+            </section>
+            <!-- LEAFLET.js -->
+            <section>
+                <section>
+                    <h1>Leaflet.js</h1>
+                    <a href="http://leafletjs.com"><img src="img/leaflet-logo.png"></a>
+                    <p>An Open-Source JavaScript Library for Mobile-Friendly Interactive Maps</p>
+                    <blockquote> simplicity, performance and usability </blockquote>
+                </section>
+                <section>
+                    <p>Developed by: <a href="http://agafonkin.com/en/">Vladimir Agafonkin.</a></p>
+                    <p>Weighing about 38 KB of JS. </p>
+                    <p>Has all the mapping features most developers ever need.</p>
+                    <p>Can be extended with <a href="http://leafletjs.com/plugins.html">Plugins</a></p>
+                    <p>Well <a href="http://leafletjs.com/reference-1.2.0.html">documented</a></p>
+                </section>
+                <section>
+                    <h1>What Leaflet does not do:</h1>
+                    <p>Provide data for you.</p>
+                    <p>Provide the basemap.</p>
+                    <p>Its not GIS</p>
+                    <h2 class="fragment fade-in">Leaflet is a framework </h2>
+                </section>
+            </section>
+            <!-- WORKSHOP -->
+            <section>
+                <h1>What will we do?</h1>
+                <p>Add a <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">Base Map</a></p>
+                <p>Adding markers, circles, polygons</p>
+                <p>Add custom data</p>
+                <iframe src="workshop/leaflet/index.html" style="width:100%; height:300px;"> </iframe>
+            </section>
+            </section>
+            <!-- Presentation part 5 Let's get started! -->
+            <section>
+                <section>
+                    <h1> Let's Map!</h1>
+                    <p>Everything is on Github</p>
+                </section>
+                <section>
+                    <h1>Github?!</h1>
+                    <img src="https://media.giphy.com/media/TW6M5r0ncBHcQ/giphy.gif" height="200px">
+                    <p>Used for code.</p>
+                    <p>Version control.</p>
+                    <p>Sharing.</p>
+                    <p>Documentation.</p>
+                </section>
+                <section>
+                    <h2>Use Sublime Text</h2>
+                    <p>NOT Notepad+ ... </p>
+                    <p>See Blackboard!</p>
+                </section>
+                <section>
+                    <h4> Base map = tiles already on the internet</h4>
+                    <h4>Custom data : Feel free to use your own!</h4>
+                    <h1>NOTE:</h1>
+                    <p>Not to big datasets</p>
+                    <p>Export to GeoJSON: WGS84</p>
+                    <p>Remove any not used attributes first!</p>
+                    <p>Points, Polygons or Lines? </p>
+                    <p>Attribute names are crucial! simple, short, no spaces or symbols</p>
+                </section>
+                <section>
+                    <p>Running a local server</p>
+                    <pre><code data-trim data-noescape>
+                C:\Python27\ArcGIS10.5\python -m SimpleHTTPServer
+                </code></pre>
+                </section>
+                <section>
+                    <h1>Problems or questions?</h1>
+                    <p>Use <a href="https://en.wikipedia.org/wiki/Internet">the INTERNET!</a></p>
+                    <p> Use the <a href="http://leafletjs.com/reference-1.2.0.html">Leaflet documentation!</a></p>
+                    <p><a href="https://stackoverflow.com/questions/tagged/leaflet">StackOverflow</a> is awesome!</p>
+                    <p>Ask me</p>
+                </section>
+                <section>
+                    <h1>Be creative!</h1>
+                    <div style="float: left; width: 50%">
+                        <img src="https://media.giphy.com/media/3oEduXdm2gjnrsJBOo/giphy.gif">
+                    </div>
+                    <div style="float: right; width: 50%">
+                        <p>There is more to find on the Internet</p>
+                        <!-- <p>playing is learning</p> -->
+                        <p>Do not keep yourself to the assignments!! </p>
+                    </div>
+                </section>
+            </section>
+            <!-- START -->
+            <section>
+                <table>
+                    <tr>
+                        <td>
+                            <h4> Presentation </h4>
+                        </td>
+                        <td> <a href="http://bit.ly/2uF2IhL">http://bit.ly/2uF2IhL </a> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <h4> Workshop </h4>
+                        </td>
+                        <td><a href="http://bit.ly/2viXRGF">http://bit.ly/2viXRGF</a></td>
+                    </tr>
+                </table>
+                <h4> or </h4>
+                <h4><a style=" text-transform: initial" href="https://github.com/NieneB/Webmapping_for_beginners">github.com/NieneB/webmapping_for_beginners</a></h4>
+            </section>
+            <!-- WRAP UP -->
+            <section data-background="img/Screenshot_background3.png">
+                <section>
+                    <h1> More info? </h1>
+                    <p>My lists of <p>
+                    <p>interesting links, workshops, presentations and background information: </p>
+                    <p><a href="https://github.com/NieneB/Webmapping_for_beginners/wiki/Interesting-links">for webmapping
+                    in general and d3 & Leaflet</a></p>
+                    <p><a href="https://github.com/maptime-ams/vector-tiles-workshop/wiki/Interesting-links">about vector
+                    tiles</a></p>
+                    <br />
+                    <p>Feel free to contact me!</p>
+                </section>
+                <section>
+                    <h1>Thank you!</h1>
+                    <p>Niene Boeijen</p>
+                    <p>niene@webmapper.net</p>
+                </section>
+            </section>
+        </div>
+    </div>
+    <script src="presentation/lib/js/head.min.js"></script>
+    <script src="presentation/js/reveal.js"></script>
+    <script>
+        // More info about config & dependencies:
+        // - https://github.com/hakimel/reveal.js#configuration
+        // - https://github.com/hakimel/reveal.js#dependencies
+        Reveal.initialize({
+            dependencies: [
+            { src: 'presentation/plugin/markdown/marked.js' },
+            { src: 'presentation/plugin/markdown/markdown.js' },
+            { src: 'presentation/plugin/notes/notes.js', async: true },
+            { src: 'presentation/plugin/highlight/highlight.js', async: true, callback: function () { hljs.initHighlightingOnLoad(); } }
+            ]
+        });
+    </script>
+</body>
+
+</html>
