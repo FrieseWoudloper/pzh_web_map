@@ -33,9 +33,7 @@
                     <h1>Deze presentatie en workshop materialen:</h1>
                     <h2 style="text-transform: initial;"><a href="https://github.com/NieneB/pzh_web_map">www.github.com/NieneB/pzh_web_map</a></h2>
                 </section>
-            </section>
             <!-- ABOUT ME ME ME! -->
-            <section>
                 <section>
                     <h1>Wie ben ik?</h1>
                     <div style="float:right; width:50%;">
@@ -49,11 +47,11 @@
                         <img src="img/wur.jpg" height="50px">
                     </div>
                     <div style="float:left; width: 50%;">
-                        <p>Web Cartographer & Geo ICT developer</p>
+                        <p>Web Cartograaf & Geo ICT developer</p>
                         <br />
                         <p> Event Organizer: Maptime <a href="https://www.meetup.com/Maptime-AMS">Amsterdam</a> & <a href="https://www.meetup.com/Maptime030-Utrecht/">Utrecht</a></p>
                         <br />
-                        <p>Internship Geo Web Visualization<a href="http://nieneb.github.io/verstedelijking/">[1]</a>
+                        <p>Stage Geo Web Visualization<a href="http://nieneb.github.io/verstedelijking/">[1]</a>
                             <br />
                             <a href="http://nieneb.github.io/TopoNamen/">[2] </a> <a href="http://nieneb.github.io/InternshipReport/">[3]</a></p>
                         <br />
@@ -64,19 +62,25 @@
             <!-- DOEL EN INHOUD -->
             <section>
                 <section>
-                    <h1>Goal of today!</h1>
-                    <p> At the end of this workshop, you will have <b>your own web page with an interactive map!</b> Including
-                        custom data and different background maps, of the area you want to show! Your web page will be hosted on
-                        Github, so you can <b>immediately share your progress with all your family and friends!</b></p>
+                    <h1>Wat gaan we doen vandaag?</h1>
+                    <li>Geo data</li>
+                    <li>Projecties en coördinaat systemen!?</li>
+                    <li>Geo data naar het Web</li>
+                    <li>Web Maps: tools en technieken</li>
+                    <li>Web applicaties en de kaart</li>
+                    <li><b>Hands on!</b> Workshop zelf een web map maken met Leaflet.js of ArcGIS JavaScript API</li>
+                </section>
+                <section>
+                    <h1>Doel workshop</h1>
+                    <p>Aan het einde van deze workshop heb je <b> je eigen werkende web pagina met een interactieve kaart</b>. De kaart bevat de officiële Nederlandse achtergrondkaart van PDOK én een WMS laag van GIS afdeling. Dit allemaal in de Nederlandse RijksDriekhoekstelsel projectie. </p>
                     <img src="https://media.giphy.com/media/6KKab1ydLq1uU/giphy.gif">
                 </section>
                 <section>
-                    <h1> Beginners</h1>
+                    <h1>Beginners</h1>
                     <img src="https://media.giphy.com/media/AEcZfXZZNCcQU/giphy.gif" width="250px">
-                    <p>For beginners means: if you have NO knowledge of JavaScript, HTML, CSS, Leaflet.js and D3.js, this workshop
-                        will help you get started!</p>
+                    <p>Je hebt geen uitgebreide voorkennis nodig van JavaScript, HTML, CSS, Leaflet.js, de ArcGIS JavaScript API of WMS en WFS servers. Deze workshop helpt je met de eerste kennismaking hiervan. </p>
                 </section>
-                <section>
+                <!-- <section>
                     <h1>This is how we do it:</h1>
                     <table>
                         <tr>
@@ -109,18 +113,19 @@
                             <td colspan="2" align="center"><b>Show & tell </b> </td>
                         </tr>
                     </table>
-                </section>
+                </section> -->
                 <section>
-                    <h1> Let's get started!</h1>
+                    <h1>Laten we beginnen!</h1>
+                     <img src="https://media.giphy.com/media/yOxRIWzT9JZJu/giphy.gif" />
+                     <p>Het Web Map Universum!</p>
                 </section>
             </section>
 
 
-            <!-- THE WEB MAP UNIVERSE -->
+            <!-- THE WEB MAP UNIVERSE Introductie-->
             <section>
                 <section>
                     <div style="background-color: rgba(255,255,255,0.8); padding:20px;">
-                        <h4>Technieken in </h4>
                         <h1>Het Web Map Universum!</h1>
                         <p>Data Design Code</p>
                     </div>
@@ -129,22 +134,7 @@
                     </aside>
                 </section>
                 <section>
-                    <h1>Even testen..</h1>
-                    <p class="fragment visible">Geo-data</p>
-                    <p class="fragment visible">Projecties</p>
-                    <p class="fragment visible">Desktop GIS(ArcGIS , Qgis)</p>
-                    <p class="fragment visible">HTML, CSS, JS</p>
-                    <p class="fragment visible">Web maps - Leaflet - raster tegels</p>
-                    <p class="fragment visible">GeoJSON format</p>
-                    <p class="fragment visible">Web Map Services (WMS / WFS)</p>
-                    <p class="fragment visible">Geo databases - Postgis</p>
-                    <p class="fragment visible">Vector tegels</p>
-                    <aside class="notes">
-                        Voordat we de technologie in duiken ga ik eerst even testen hoeveel jullie al weten?
-                    </aside>
-                </section>
-                <section>
-                    <h1>Van Data naar het Web</h1>
+                    <h1>GeoData van Desktop naar het Web</h1>
                     <p>Doel >> Functionaliteit >> Mapping Technologie >> Design</p>
                     <img src="img/desktop_web1.jpg"> <!-- desktop server data-->
 
@@ -159,18 +149,15 @@
                         Ontwerp interface, interactie, experience.
                     </aside>
                 </section>
-                <section>
-                    <h1>Data Code Design </h1>
-                    <ol>
-                        <li> Laad de data</li>
-                        <li> Maak dingen werkend</li>
-                        <li> Maak dingen mooi
-                    </ol>
-                    <p>
-                        <a href="https://www.axismaps.com/blog/2012/09/advice-to-the-aspiring-interactive-cartographer/">[source:
-                            Axis Maps]</a>
-                        </small>
-                    </p>
+                <section data-background="img/web_map_universe.png" data-background-size="80%">
+                    <aside class="notes">
+                        Dit heb ik samengevat in dit plaatje:
+                    </aside>
+                </section>
+                <section data-background="img/web_map_universe.png" data-background-size="80%">
+                    <aside class="notes">
+                        Route en keuzes hangen af van je eind doel. Maar het is goed om te weten wat er allemaal bestaat zodat je snel weet waar je op in kan springen. en wie of wat je moet hebben
+                    </aside>
                 </section>
                 <section>
                     <h1>Doel?</h1>
@@ -193,33 +180,271 @@
                         <p>Static web maps</p>
                     </aside>
                 </section>
-                <section data-background="img/web_map_universe.png" data-background-size="80%">
+                <section>
+                    <h1>Data Code Design </h1>
+                    <ol>
+                        <li> Laad de data</li>
+                        <li> Maak dingen werkend</li>
+                        <li> Maak dingen mooi
+                    </ol>
+                    <p>
+                        <a href="https://www.axismaps.com/blog/2012/09/advice-to-the-aspiring-interactive-cartographer/">[source:
+                            Axis Maps]</a>
+                        </small>
+                    </p>
+                </section>
+                <section>
+                    <h1>Web Mapping</h1>
+                    <ul>
+                        <li>snelheid en schaalbaarheid</li>
+                        <li>Data-gestuurd</li>
+                        <li>Responsive ontwerp</li>
+                        <li>Gepersonaliseerd</li>
+                    </ul>
+                    </br>
+                    <img src="https://media.giphy.com/media/3ohBV3swUjlLSwyaTm/giphy.gif" />
+                
                     <aside class="notes">
-
-                        We hebben een schema opgezet waar je allerelei technieken ziet die je hier voor kan gebruiken. Dingen die
-                        je als Web cartograaf
-                        zou moeten kennen om alle moglijke geo data visualisaties te kunnen maken. en ja, met het meeste werken wij
-                        bij Webmapper
-                        ook!
+                        Snel zijn. Als iets langzaam reageert haakt de gebruiker af. </br>
+                        Data veranderd. Beeld ook </br>
+                        Elke browser aankunnen en device. </br>
+                        User drivern
                     </aside>
-                    <!-- <img src="img/web_map_universe.png" /> -->
                 </section>
-
-                <section data-background="img/web_map_universe_data.png" data-background-size="80%">
+                <section data-background="img/Sat-Nav-vs-Map.jpg">
+                    <div style="float:right; width:462px; height:650px; margin-right:0px;">
+                        <img class="fragment fade-out" data-fragment-index="0" src="img/new_cartographers.png" width="462"
+                            height="615" style="position:absolute;top:0;right:0;">
+                        <img class="fragment fade-in" data-fragment-index="0" src="img/new_cartographers2.png" width="462"
+                            height="615" style="position:absolute;top:0;right:0;">
+                        <small><a href="http://www.sciencemag.org/careers/2013/03/new-cartographers" style="position:absolute;bottom:0;right:0;">[source]</a></small>
+                    </div>
+                    <aside class="notes">
+                        leuk blog artikel over
+                        </br> Science Magazine website.
+                        </br>
+                        Techniek veranderd >> vakgebied ook!!
+                    </aside>
                 </section>
-                <section data-background="img/web_map_universe_data_hosting.png" data-background-size="80%">
+                <section>
+                    We no longer go to maps to find out where we are. Instead, we tell maps where we are and they form around us on the
+                    fly.
+                    <small><a href="https://inthesetimes.com/article/3524/the_new_cartographers/">[source]</a></small>
+                    <aside class="notes">
+                        Blog These Times.
+                        </br>
+                        Andere technieken. Niet alleen maar Design..
+                    </aside>
                 </section>
-                <section data-background="img/web_map_universe_data_hosting_design.png" data-background-size="80%">
+                <section data-background="http://blogs.discovermagazine.com/citizen-science-salon/files/2015/10/shutterstock_260023832.jpg">
+                    <blockquote style="width: 50%">
+                        There has never been more open data available than at this moment in time, and everyone from global NGOs to
+                        armchair hobbyists are using that data to create maps.
+                        <small>
+                            <a href="https://nextcity.org/features/view/the-new-cartographers">[source]</a>
+                        </small></blockquote>
+                    <aside class="notes">
+                        Daarnaast + Meer data + Meer techniek </br>
+                        + open-source mogelijkeheden >
+                        </br>
+                        iedereen kan cartograaf spelen..
+                    </aside>
                 </section>
-                <section data-background="img/web_map_universe_data_hosting_design_code.png" data-background-size="80%">
-                </section>
-                <section data-background="img/web_map_universe_data_hosting_design_code_all.png" data-background-size="80%">
-                    <aside class="notes"> Ben niet bang. Het belangrijkste is dat je alles een keer hoort. Mocht je het ooit tegen
-                        komen dan weet je nu sneller waar je moet zoeken.</aside>
+                <section data-background="img/achtergrondje.png">
+                    <blockquote style="width: 50%">
+                        Cartografie is geen niche meer:
+                        <ul>
+                            <li>Big data</li>
+                            <li>Massaconsumptie</li>
+                            <li>Open source sofware</li>
+                            <li>Open data</li>
+                        </ul>
+                        <small>
+                            <a href="https://www.slideshare.net/jatorre/siglibre-english-17036935">[source]</a>
+                        </small>
+                    </blockquote>
+                    <aside class="notes">
+                        maar onderdeel vna iets groters </br>
+                        Geo is overal. Elke dataset bevat wel geo. Elke ontwikkelaar werkt er wel eens mee zonder het te beseffen.
+                        </br>
+                        Mass consumption > iedereen maakt kaarten en wil verhalen vertellen met kaarten. Zie in kranten, nieuws etc.
+                        Tegenwoordig
+                        zijn kaarten ontzettend populair. iedereen kent kaarten en snapt het. Google maps is main stream. Design is
+                        belangrijk!
+                        </br>
+                        Meer tools en data beschikbaar. Het wordt ook makkelijker.
+                    </aside>
                 </section>
             </section>
-            <!--WEB MAP  -->
+            <!-- GEO DATA AND PROJECTIONS -->
             <section>
+                 <section data-background="img/web_map_universe_data.png" data-background-size="80%">
+                    <aside class="notes">
+                        Laten we bij de data beginnen. 
+                    </aside>
+                </section>
+                <section>
+                    <h1><u>Geo</u> Data = Data + Location</h1>
+                    <p>Vector vs Raster</p>
+                    <img src="img/point_line_polygon.jpg" width="35%">
+                    <img src="img/attributes.jpg" width="35%">
+                </section>
+                <section>
+                    <h1>Maps = Collection of <u>Geo</u> data</h1>
+                    <p>Maps organize complex data about the environment. </p>
+                    <p>Reveal patterns and relationships.</p>
+                    <p>Maps allow us to communicate about location using a <u>common framework</u></p>
+                </section>
+                <section>
+                    <h1>Coordinate system</h1>
+                    <p>Communicate locations & distances on the Earth's surface</p>
+                    <img src="img/round_flat.jpg" width="50%">
+                </section>
+                <section>
+                    <h1>Shape of the earth?</h1>
+                    <img src="img/geoid.jpg" width="50%" />
+                    <p>The real shape of the earth is too complex to be useful as a reference for measurement..</p>
+                </section>
+                <section>
+                    <h1>Geographic coordinate system</h1>
+                    <img src="img/geograpic_coord.jpg" width="50%" />
+                    <p>3D model</p>
+                    <p>Longitude Latitude</p>
+                </section>
+                <section>
+                    <h1>Projected coordinate system</h1>
+                    <img src="img/projected_coord.jpg" width="50%" />
+                    <p>Mathematical projection / translation</p>
+                    <p>2D</p>
+                </section>
+                <section>
+                    <h4>Geographic Coordinate System:</h4>
+                    <h1>WGS84 EPSG:4326 </h1>
+                    <p>Lon Lat in decimal degrees</p>
+                    <p>GPS</p>
+                    <p>Standard way to store most geodata for the Web:</p>
+                    <p><a href="http://geojson.org/">GeoJSON</a></p>
+                    <pre><code>
+                {
+                "type": "Feature",
+                "geometry": {
+                    "type": "Point",
+                    "coordinates": [5.2394137,52.0819662]
+                },
+                "properties": {
+                    "name": "Hotel Theater Figi"
+                }
+                }</code></pre>
+                    <aside class="notes">standardize the way we describe locations on a map
+                        GeoJSON is a geospatial data interchange format based on JavaScript
+                        Object Notation (JSON).
+                        GeoJSON uses a geographic coordinate reference system, World Geodetic
+                        System 1984, and units of decimal degrees.
+                        geometry types: Point, LineString, Polygon, MultiPoint, MultiLineString, and MultiPolygon. </aside>
+                </section>
+                <section>
+                    <h4>Projected Coordinate System:</h4>
+                    <h1>Spherical/Web Mercator EPSG:3857</h1>
+                    <p>Square, scale not relevant, shapes important</p>
+                    <img src="img/image23.png" width="25%" />
+                    <p><i>We store data in EPSG:4326, but display it in EPSG:3857!</i></p>
+                    <aside class="notes">first introduced by Google and is used in almost 100% of web maps</aside>
+                </section>
+                <section>
+                    <h1>Why is Mercator wrong?</h1>
+                    <p><a href="https://bramus.github.io/mercator-puzzle-redux/">True Size puzzle</a></p>
+                    <p><a href="https://www.youtube.com/watch?v=eLqC3FNNOaI">West Wing</a></p>
+                </section>
+                <section>
+                    <h4>Projected Coordinate System:</h4>
+                    <h1>RD New EPSG:28992</h1>
+                    <p>Netherlands!</p>
+                    <img src="img/rd_new.gif" width="49%" />
+                    <img src="img/bessel.jpg" width="40%" />
+                </section>
+                <section>
+                    <h4>Geographic Coordinate System:</h4>
+                    <p>WGS84 EPSG:4326</p>
+                    <h4>Projected Coordinate System:</h4>
+                    <p>Web Mercator EPSG:3857</p>
+                    <h4>Projected Coordinate System:</h4>
+                    <p>RD New EPSG:28992</p>
+                </section>
+                <section>
+                    <br />
+                
+                    <p><a href="http://lyzidiamond.com/posts/4326-vs-3857">[1]</a></p>
+                    <p><a href="https://alastaira.wordpress.com/2011/01/23/the-google-maps-bing-maps-spherical-mercator-projection/">[2]</a></p>
+                </section>
+                <section data-background="img/web_map_universe_data.png" data-background-size="80%">
+                    <aside class="notes">
+                        Data gedefineeerd. 
+                    </aside>
+                </section>
+                <section>
+                    <li>ESRI: Shape File. .shp .shx .prj .dbf</li>
+                    <li>Web: GeoJSON .geojson .topojson .json</li>
+                    <li>Google: .KML/.KMZ</li>
+                </section>
+               
+            </section>
+            <!--
+                <section>
+                    GeoPortals.. Ugh. 
+                    Desing Usability Experience.
+                    Een lengenda is het bewijs dat een kaart niet goed ontworpen is. 
+                </section>
+                <section>
+                <div style="background-color: rgba(255,255,255,0.8); padding:20px;">
+                <h1>Web Mapping</h1>
+                <ul>
+                <li>Interactie</li>
+                <li>User-Experience</li>
+                <li>Animatie</li>
+                </ul>
+                </br>
+                <q>The realization of the interactive map as an experience, not just a map design.</q>
+                <small>
+                <a href="https://www.slideshare.net/jatorre/siglibre-english-17036935">[source]</a>
+                </small>
+                </div>
+                <aside class="notes">
+                Wat is web mapping geworden:</br>
+                We ontwerpen interactief. op data. Meerdere zoom levels. Geen legenda's. Met klik interacties om meer info te
+                laten zien. De gebruiker
+                bepaalt wat hij ziet op een kaart. Niet meer de cartograaf...
+                </br>
+                Gebruiksvriendelijkeheid.
+                </br>
+                Realiseeren dat een kaart meer is dan cartografie.
+                </aside>
+
+                </section>
+                <section data-background-iframe="http://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek">
+                <a href="http://www.nytimes.com/projects/2012/snow-fall/index.html#/?part=tunnel-creek">snow-fall</a>
+                </section>
+
+                <section>
+                <img src="https://static1.squarespace.com/static/54ff63f0e4b0bafce6932642/t/590746f8bebafb1fcb54b141/1492188776597/?format=750w">
+                </section>
+                <section>
+                <q>Cartography is the new code.</q>
+                <img src="img/cool_carthography.png">
+                <small>
+                <a href="https://www.wired.com/story/mapping-the-future-cartography-stages-a-comeback/">[source]</a>
+                </small>
+                <aside class="notes"> Programeren is key!!
+                Cartografie is niet alleen maar de kaart ontwerpen er komt van allerlei techniek en interactie om heen.
+                </aside>
+                <q>Vibrant. Dynamic. Responsive. Intelligent. We no longer have the static images, the paper-under-glass we used to have. Instead,
+                    today’s maps feel like living, breathing things – highlighting everything related to our taps and inputs, and dimming and
+                    de-emphasizing everything that isn’t.</q>
+                    <small><a href=https://www.justinobeirne.com/autonomous-vehicle-cartography#part-1>[source]</a></small>
+                </section> -->
+
+            <!-- TO THE WEB MAP -->
+            <section>
+                <section data-background="img/web_map_universe_data_hosting.png" data-background-size="80%">    </section>
                 <section>
                     <h1>What is a web map?</h1>
                     <p><i>Analogue paper maps</i></p>
@@ -303,10 +528,10 @@
                         <img src="img/tiles.gif">
                     </div>
                 </section>
-                <!-- 					<section>
-            						<h4>Today: </h4>
-            						<p> We use Tiles already provided on the internet!</p>
-            					</section> -->
+                <!--<section>
+                <h4>Today: </h4>
+                <p> We use Tiles already provided on the internet!</p>
+                </section> -->
                 <section>
                     <h1>Layers!</h1>
                     <div style="float: left; width: 50%;">
@@ -315,16 +540,16 @@
                         <img src="img/raster.png" width="500px">
                     </div>
                     <div style="float: right; width: 50%;"">
-            							<p>Data Layer / Feature Layer</p>
-            							<p>Vector</p>
-            						<img src="
+                                                        <p>Data Layer / Feature Layer</p>
+                                                        <p>Vector</p>
+                                                    <img src="
                         img/vector_types.png" width="500px">
                     </div>
                 </section>
-                <!-- 					<section>
-            						<p>There is also such a thing as Vector tiles!</p>
-            						<p>But today only about <h4>Raster tiles</h4></p>
-            					</section> -->
+                 <!-- <section>
+                    <p>There is also such a thing as Vector tiles!</p>
+                    <p>But today only about <h4>Raster tiles</h4></p>
+                </section> -->
                 <section>
                     <h1>Summary</h1>
                     <h2>Web Map Building blocks</h2>
@@ -340,9 +565,14 @@
                         <img src="img/tile_creation.png">
                     </div>
                 </section>
+                <section>
+                    <h1>Serving data</h1>
+                    <p>WMS WFS WMTS</p>
+                </section>
             </section>
-            <!-- WEB DEVELOPMENT -->
+            <!-- FRONT END AND DESIGN -->
             <section>
+                <section data-background="img/web_map_universe_data_hosting_design.png" data-background-size="80%">    </section>
                 <section>
                     <h2>How to bring this all together?</h2>
                     <div class="fragment fade-in">
@@ -385,7 +615,14 @@
                         <p><a href="https://www.mapbox.com/mapbox.js/api/v3.1.1/">Mapbox</a></p>
                         <p><a href="https://developer.here.com/develop/javascript-api">HERE Maps</a></p>
                 </section>
+                <section data-background="img/web_map_universe_data_hosting_design_code.png" data-background-size="80%">
+                </section>
             </section>
+            <!-- ALL in Summary -->
+            <section data-background="img/web_map_universe_data_hosting_design_code_all.png" data-background-size="80%">
+                <aside class="notes"> Ben niet bang. Het belangrijkste is dat je alles een keer hoort. Mocht je het ooit tegen
+                    komen dan weet je nu sneller waar je moet zoeken.</aside>
+            </section> 
             <!-- LEAFLET.js -->
             <section>
                 <section>
@@ -409,16 +646,23 @@
                     <h2 class="fragment fade-in">Leaflet is a framework </h2>
                 </section>
             </section>
-            <!-- WORKSHOP -->
             <section>
-                <h1>What will we do?</h1>
-                <p>Add a <a href="http://leaflet-extras.github.io/leaflet-providers/preview/">Base Map</a></p>
-                <p>Adding markers, circles, polygons</p>
-                <p>Add custom data</p>
-                <iframe src="workshop/leaflet/index.html" style="width:100%; height:300px;"> </iframe>
+                <section>
+                    <h1>ArcGIS JavaScript API</h1>
+                </section>
             </section>
+            <section>
+                <section>
+                    <h1>ESRI StoryMaps</h1>
+                </section>
             </section>
-            <!-- Presentation part 5 Let's get started! -->
+            <section>
+                <section>
+                    <h1>R Shiny applicatie</h1>
+                    https://developers.arcgis.com/javascript/
+                </section>
+            </section>
+            <!-- WORKSHOP -->
             <section>
                 <section>
                     <h1> Let's Map!</h1>
