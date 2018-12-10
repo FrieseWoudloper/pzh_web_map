@@ -22,6 +22,9 @@
             );
 
             achtergrondkaart.addTo(map);
+            var pzhuis = L.marker([52.087075, 4.317155]).addTo(map);
+            var popup = "Dit is het Provincie Huis! ";
+            pzhuis.bindPopup(popup); 
         </script>
     </body>
 </html>
