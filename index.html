@@ -191,7 +191,7 @@
                 </section>
                 <section>
                     <ul>
-                        <li>Hoveelheid data</li>
+                        <li>Hoeveelheid data</li>
                         <li>Benodigde interactie</li>
                         <li>apparaat</li>
                         <li>Online/offline</li>
@@ -274,6 +274,7 @@
                 </section>
                 <section>
                     <h1>Why is Mercator wrong?</h1>
+                    <p><a href="https://leafletjs.com/examples/zoom-levels/">Web maps en Projecties</a></p>
                     <p><a href="https://bramus.github.io/mercator-puzzle-redux/">True Size puzzle</a></p>
                     <p><a href="https://www.youtube.com/watch?v=eLqC3FNNOaI">West Wing</a></p>
                 </section>
@@ -291,10 +292,6 @@
                     <p>Web Mercator EPSG:3857</p>
                     <h4>Projected Coordinate System:</h4>
                     <p>RD New EPSG:28992</p>
-                </section>
-                <section>
-                    <br />
-                
                     <p><a href="http://lyzidiamond.com/posts/4326-vs-3857">[1]</a></p>
                     <p><a href="https://alastaira.wordpress.com/2011/01/23/the-google-maps-bing-maps-spherical-mercator-projection/">[2]</a></p>
                 </section>
@@ -302,21 +299,6 @@
                     <aside class="notes">
                         Data gedefineeerd. 
                     </aside>
-                </section>
-                <section>
-                    <img src="img/desktop_web1.jpg">
-                </section>
-                <section>
-                    <h1>Bestands Formaten</h1>
-                    <li>ESRI: Shape File. .shp .shx .prj .dbf</li>
-                    <li>Web: GeoJSON .geojson .topojson .json</li>
-                    <li>Google: .KML/.KMZ</li>
-                </section>
-                <section>
-                    <h1>Spatial DataBases</h1>
-                    <p>ESRI</p>
-                    <p>PostGIS PostgreSQL</p>
-                    <p>SQL server Spatial</p>
                 </section>
             </section>
             <!--
@@ -381,8 +363,10 @@
                 <section data-background="img/web_map_universe_data_hosting.png" data-background-size="80%">    
                 </section>
                 <section> 
-                    <h2>Tiles</h2>
-                    <h2>Servers</h2>
+                    <ol>
+                    <li><h2>Tegel cache</h2></li>
+                    <li><h2>Serveren</h2></li>
+                    </ol>
                 </section>
                 <section>
                     <h1>What is a web map?</h1>
@@ -475,14 +459,62 @@
                     <img src="img/tile_creation.png">
                 </section>
                 <section>
-                    <h1>Serving data</h1>
-                    <p>WMS WFS WMTS</p>
+                    <img src="https://www.oreilly.com/library/view/web-mapping-illustrated/0596008651/httpatomoreillycomsourceoreillyimages62845.png">
                 </section>
-
-
-
                 <section>
-                    <h1>Layers!</h1>
+                    <h1>Serving data</h1>
+                    <h2>Open Geospatial Consortium</h2>
+                    <p>
+
+The <a href="https://www.opengeospatial.org/">Open Geospatial Consortium (OGC)</a> is an international not for profit organization committed to making quality open
+standards for the global geospatial community
+                    </p>
+                    <p><a href="https://www.opengeospatial.org/standards/wms">WMS</a> Web Map Service</p>
+                    <p><a href="https://www.opengeospatial.org/standards/wfs"> WFS</a> Web Feature Service</p>
+                </section>
+                <section>
+                    <h1>WMS</h1>
+                    <p> Map Server op een GeoDatabase</p>
+                    <p>JPEG PNG</p>
+                    <p>GetCapabilities</p>
+                    <p>GetMap</p>
+                    <p>GetLegendGraphic</p>
+                    <p>GetFeatureInfo</p>
+
+                </section>
+                <section>
+                    <h1>WFS</h1>
+                    <p>XML > GML Geography Markup Language  </p>
+                    <p>GetFeature</p>
+                    <p></p>
+
+                </section>
+                <section>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/WFS.png">
+                </section>
+                <section>
+                    <img src="img/desktop_web1.jpg">
+                </section>
+                <!-- <section>
+                    <h1>Bestands Formaten</h1>
+                    <li>ESRI: Shape File. .shp .shx .prj .dbf</li>
+                    <li>Web: GeoJSON .geojson .topojson .json</li>
+                    <li>Google: .KML/.KMZ</li>
+                </section> -->
+                <section>
+                    <h1>Spatial DataBases</h1>
+                    <p><a href="https://www.esri.com/training/catalog/57630436851d31e02a43f19e/getting-started-with-the-geodatabase/">ESRI GeoDatabase</a></p>
+                    <p><a href= "https://postgis.net/">PostGIS</a> <a href="https://www.postgresql.org/">PostgreSQL</a></p>
+                </section>
+                <section>
+                    <h1>Servers</h1>
+                    <p><a href="http://geoserver.org/">GeoServer</a></p>
+                    <p><a href="https://mapserver.org/">MapServer</a></p>
+                    <p><a href="http://enterprise.arcgis.com/en/server/latest/get-started/windows/what-is-arcgis-for-server-.htm">ArcGIS Server</a></p>
+                </section>
+             
+                <section>
+                    <h1>Map Layers!</h1>
                     <div style="float: left; width: 50%;">
                         <p>Base Layer</p>
                         <p>Raster</p>
@@ -495,6 +527,7 @@
                         img/vector_types.png" width="500px">
                     </div>
                 </section>
+                
                  <!-- <section>
                     <p>There is also such a thing as Vector tiles!</p>
                     <p>But today only about <h4>Raster tiles</h4></p>
@@ -514,7 +547,9 @@
                         <img src="img/tile_creation.png">
                     </div>
                 </section>
-                <section data-background="img/web_map_universe_data_hosting_design.png" data-background-size="80%"> </section>
+            </section>
+            <section>
+                
                 <section>
                     <h2>How to bring this all together?</h2>
                     <div class="fragment fade-in">
@@ -523,6 +558,7 @@
                         <p>Tiles, content, interaction</p>
                     </div>
                 </section>
+                <section data-background="img/web_map_universe_data_hosting_design.png" data-background-size="80%"> </section>
                 <section>
                     <img src="img/web_map_building_blocks.png" height=" 50%">
                 </section>
